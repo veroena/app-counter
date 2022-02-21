@@ -56,7 +56,10 @@ function App() {
       {data.map((counter) => (
         <Counter key={counter.id} value={counter.value} id={counter.id} increase={increase} decrease={decrease} />
       ))}
-      <div>total: {total}</div>
+      <div>
+        <p>total</p>
+        <p data-testid="total">{total}</p>
+        </div>
     </div>
   );
 }
