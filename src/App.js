@@ -19,10 +19,10 @@ function Counter(props) {
 
   return (
     <div>
-      <b>{counter}</b>
+      <b data-testid="value">{counter}</b>
       <div>
-        <button onClick={decrease}>-</button>
-        <button onClick={increase}>+</button>
+        <button onClick={decrease} data-testid="decrease">-</button>
+        <button onClick={increase} data-testid="increase">+</button>
       </div>
     </div>
   );
