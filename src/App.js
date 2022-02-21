@@ -23,6 +23,7 @@ function Counter(props) {
 
 function App() {
   const [data, setData] = useState(input);
+  const [total, setTotal] = useState(0);
 
   const increase = (event) => {
     const id = +event.currentTarget.id;
@@ -34,6 +35,7 @@ function App() {
         return item;
       });
     setData(newData);
+    setTotal(total + 1);
   }
 
   const decrease = (event) => {
@@ -46,6 +48,7 @@ function App() {
         return item;
       });
     setData(newData);
+    setTotal(total - 1);
   }
 
   return (
@@ -53,6 +56,7 @@ function App() {
       {data.map((counter) => (
         <Counter key={counter.id} value={counter.value} id={counter.id} increase={increase} decrease={decrease} />
       ))}
+      <div>total: {total}</div>
     </div>
   );
 }
