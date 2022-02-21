@@ -1,0 +1,97 @@
+:root {
+  --main-color: #46515A;
+  --accent-color: #4AA696;
+  --decrease-color: #EE5655;
+  --increase-color: #5DB04F;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+}
+
+.app {
+  padding: 1rem;
+}
+
+.container {
+  border: solid 3px var(--main-color);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 800px;
+}
+
+header {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  padding: 35px;
+}
+
+.title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: normal;
+}
+
+.counters {
+  display: flex;
+}
+
+.counter__item {
+  border: solid 3px var(--main-color);
+  border-left: none;
+  padding: 50px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.counter__item:last-child {
+  border-right: none;
+}
+
+.counter__item .value {
+  font-size: 40px;
+  margin: 0 0 15px 0;
+}
+
+.counter__button {
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  margin: 0 3px;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  font-size: 28px;
+  line-height: 28px;
+  font-family: inherit;
+}
+
+.decrease {
+  background-color: var(--decrease-color);
+  margin-bottom: 1px;
+}
+
+.increase {
+  background-color: var(--increase-color);
+}
+
+.total {
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.total .total__text {
+  margin: 0;
+}
+
+.total .total__value {
+  margin: 0 0 0 5px;
+}

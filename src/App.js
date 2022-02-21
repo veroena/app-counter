@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css"
 
 const input = [
   { id: 1, value: 0 },
@@ -11,11 +12,11 @@ function Counter(props) {
   const { value, id, increase, decrease } = props;
 
   return (
-    <div>
-      <b data-testid="value">{value}</b>
+    <div className="counter__item">
+      <p className="value" data-testid="value">{value}</p>
       <div>
-        <button onClick={(event) => decrease(event)} data-testid="decrease" id={id}>-</button>
-        <button onClick={(event)=>increase(event)} data-testid="increase"  id={id}>+</button>
+        <button className="counter__button increase" onClick={(event)=>increase(event)} data-testid="increase"  id={id}>+</button>
+        <button className="counter__button decrease" onClick={(event) => decrease(event)} data-testid="decrease" id={id}>-</button>
       </div>
     </div>
   );
@@ -52,14 +53,21 @@ function App() {
   }
 
   return (
-    <div>
-      {data.map((counter) => (
-        <Counter key={counter.id} value={counter.value} id={counter.id} increase={increase} decrease={decrease} />
-      ))}
-      <div>
-        <p>total</p>
-        <p data-testid="total">{total}</p>
+    <div className="app">
+      <div className="container">
+        <header>
+          <h1 className="title">Counters challenge</h1>
+        </header>
+        <div className="counters">
+          {data.map((counter) => (
+            <Counter key={counter.id} value={counter.value} id={counter.id} increase={increase} decrease={decrease} />
+          ))}
         </div>
+        <div className="total">
+          <p className="total__text">Total count:</p>
+          <p className="total__value" data-testid="total">{total}</p>
+          </div>
+      </div>
     </div>
   );
 }
