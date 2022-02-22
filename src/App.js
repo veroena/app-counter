@@ -15,8 +15,22 @@ function Counter(props) {
     <div className="counter__item">
       <p className="value" data-testid="value">{value}</p>
       <div>
-        <button className="counter__button increase" onClick={(event)=>increase(event)} data-testid="increase"  id={id}>+</button>
-        <button className="counter__button decrease" onClick={(event) => decrease(event)} data-testid="decrease" id={id}>-</button>
+        <button
+          className="counter__button increase"
+          onClick={(event)=>increase(event)}
+          data-testid="increase" 
+          id={id}
+        >
+          +
+        </button>
+        <button
+          className="counter__button decrease"
+          onClick={(event) => decrease(event)}
+          data-testid="decrease"
+          id={id}
+        >
+          -
+        </button>
       </div>
     </div>
   );
@@ -60,7 +74,13 @@ function App() {
         </header>
         <div className="counters">
           {data.map((counter) => (
-            <Counter key={counter.id} value={counter.value} id={counter.id} increase={increase} decrease={decrease} />
+            <Counter
+              key={counter.id}
+              value={counter.value}
+              id={counter.id}
+              increase={increase}
+              decrease={decrease}
+            />
           ))}
         </div>
         <div className="total">
